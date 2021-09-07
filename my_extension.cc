@@ -1,5 +1,6 @@
 #include <pybind11/pybind11.h>
 
+#include "example.pb.h"
 #include "google/protobuf/message.h"
 #include "pybind11_protobuf/wrapped_proto_caster.h"
 
