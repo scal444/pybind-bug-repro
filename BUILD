@@ -11,10 +11,16 @@ py_proto_library(
     deps = [":example_proto"],
 )
 
+cc_proto_library(
+    name = "example_cc_proto",
+    deps = [":example_proto"],
+)
+
 pybind_extension(
     name = "my_extension",
     srcs = ["my_extension.cc"],
     deps = [
+        ":example_cc_proto",
         "@com_google_protobuf//:protobuf",
         "@pybind11_protobuf//pybind11_protobuf:wrapped_proto_caster",
     ],
